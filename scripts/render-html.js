@@ -15,7 +15,6 @@ module.exports = function renderHtml(filePath) {
         filename: filePath,
         basedir: srcPath
     });
-  console.log(`### INFO: html = ${html}`);
 
     const destPathDirname = upath.dirname(destPath);
     if (!sh.test('-e', destPathDirname)) {
