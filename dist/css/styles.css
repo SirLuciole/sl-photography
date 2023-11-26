@@ -10843,12 +10843,6 @@ footer ul {
   margin: 0 !important;
 }
 
-#location {
-  font-size: small;
-  padding-top: 4rem;
-  padding-bottom: 1rem;
-}
-
 a {
   color: var(--bs-link-color);
   text-decoration: none !important;
@@ -10861,4 +10855,20 @@ a:hover {
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
   color: inherit;
   text-decoration: none;
+}
+
+div.card-body {
+  background: var(--bs-light);
+}
+
+#location {
+  font-size: small;
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+}
+
+#welcome-banner {
+  background-image: url("/assets/images/DSC_2917_darken.png");
+  background-size: cover;
+  background-position: center;
 }
