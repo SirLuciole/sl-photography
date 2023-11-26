@@ -1,2 +1,44 @@
 // Import Bootstrap
 @import "bootstrap/scss/bootstrap.scss";
+
+// Custom Styles
+:root {
+  --bs-light: #FAF9F6;
+  --bs-dark: #212529;
+  --bs-light-rgb: 250, 249, 246;
+  --bs-dark-rgb: 33, 37, 41;
+  --bs-link-color: #63E2FF;
+  --bs-link-hover-color: #BDE1EE;
+}
+
+footer {
+  div.vr {
+    padding: 0;
+    margin: 0;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+#location {
+  font-size: small;
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+}
+
+a {
+  color: var(--bs-link-color);
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: var(--bs-link-hover-color);
+}
+
+a:not([href]):not([class]), a:not([href]):not([class]):hover {
+  color: inherit;
+  text-decoration: none;
+}
