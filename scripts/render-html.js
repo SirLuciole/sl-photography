@@ -1,12 +1,12 @@
 'use strict';
 const fs = require('fs');
 const upath = require('upath');
-const pug = require('pug');
 const sh = require('shelljs');
+const pug = require('pug');
 const prettier = require('prettier');
 
-module.exports = function renderPug(filePath) {
-    const destPath = filePath.replace(/src\/pug\//, 'dist/').replace(/\.pug$/, '.html');
+module.exports = function renderHtml(filePath) {
+    const destPath = filePath.replace(/src\/html\//, 'dist/');
     const srcPath = upath.resolve(upath.dirname(__filename), '../src');
 
     console.log(`### INFO: Rendering ${filePath} to ${destPath}`);
@@ -15,9 +15,8 @@ module.exports = function renderPug(filePath) {
         filename: filePath,
         basedir: srcPath
     });
-  // console.log(`### INFO: html = ${html}`);
 
-  const destPathDirname = upath.dirname(destPath);
+    const destPathDirname = upath.dirname(destPath);
     if (!sh.test('-e', destPathDirname)) {
         sh.mkdir('-p', destPathDirname);
     }

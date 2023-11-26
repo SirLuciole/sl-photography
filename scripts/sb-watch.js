@@ -5,6 +5,7 @@ const chokidar = require('chokidar');
 const upath = require('upath');
 const renderAssets = require('./render-assets');
 const renderPug = require('./render-pug');
+const renderHtml = require('./render-html');
 const renderScripts = require('./render-scripts');
 const renderSCSS = require('./render-scss');
 
@@ -45,6 +46,13 @@ function _processFile(filePath, watchEvent) {
         return _handlePug(filePath, watchEvent);
     }
 
+    if (filePath.match(/\.html$/)) {
+      if (watchEvent === 'change') {
+        return _handleHtml(filePath, watchEvent);
+      }
+      return;
+    }
+
     if (filePath.match(/\.scss$/)) {
         if (watchEvent === 'change') {
             return _handleSCSS(filePath, watchEvent);
@@ -72,6 +80,9 @@ function _handlePug(filePath, watchEvent) {
     if (!filePath.match(/includes/) && !filePath.match(/mixins/) && !filePath.match(/\/pug\/layouts\//)) {
         return renderPug(filePath);
     }
+}
+function _handleHtml(filePath, watchEvent) {
+    renderHtml(filePath);
 }
 
 function _renderAllPug() {
