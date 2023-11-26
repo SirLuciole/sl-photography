@@ -3,5 +3,17 @@
 * Copyright 2013-2023 Start Bootstrap
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-blog-home/blob/master/LICENSE)
 */
-// This file is intentionally blank
-// Use this file to add JavaScript to your project
+// Check if file is completely ready
+// $(document).ready(function () {
+//     // Load the external html
+//     $('#div-navbar').load('navbar.html');
+//     // $('#div-footer').load('footer.html');
+// });
+// Insert the Navbar
+$.get("navbar.html", function(data){
+    $("#div-navbar").replaceWith(data);
+});
+// Insert the Footer
+$.get("footer.html", function(data){
+    $("#div-footer").replaceWith(data);
+});
