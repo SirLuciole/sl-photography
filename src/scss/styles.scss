@@ -41,6 +41,17 @@ div.card-body {
   background: var(--bs-light);
 }
 
+.img-col {
+  min-height: max-content;
+}
+.img-portfolio {
+  padding: 2rem 1rem 2rem;
+}
+
+.btn-info {
+  --bs-btn-bg: #63E2FF;
+}
+
 #location {
   font-size: small;
   padding-top: 4rem;
